@@ -1,0 +1,3 @@
+-priv-app/org.fdroid.fdroid.privileged_2070.apk
+-app/org.microg.nlp.backend.ichnaea_20026.apk
+-app/org.microg.nlp.backend.nominatim_20042.apk
