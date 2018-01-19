@@ -16,7 +16,6 @@
 # limitations under the License.
 
 
-FDROID_URL="https://f-droid.org/"
 FDROID_REPO_URL="https://f-droid.org/repo"
 MICROG_REPO_URL="https://microg.org/fdroid/repo"
 
@@ -109,7 +108,6 @@ function get_packages() {
     return 0
 }
 
-get_packages "$FDROID_URL" "fdroid-store.txt"
 get_packages "$FDROID_REPO_URL" "fdroid.txt"
 get_packages "$MICROG_REPO_URL" "microg.txt"
 
@@ -118,8 +116,9 @@ VENDOR="microg"
 ANDROIDMK="$MY_DIR/Android.mk"
 PRODUCTMK="$MY_DIR/$VENDOR-vendor.mk"
 
-write_headers
-write_makefiles "$MY_DIR/fdroid-store.txt"
+DEVICE="true"
+write_headers "" WITH_MICROG
+DEVICE=
 write_makefiles "$MY_DIR/fdroid.txt"
 write_makefiles "$MY_DIR/microg.txt"
 write_footers
