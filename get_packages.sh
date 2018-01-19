@@ -95,11 +95,13 @@ function get_packages() {
 
     parse_file_list $package_file_list
 
-    local filelist=( ${PRODUCT_PACKAGES_LIST[@]} )
+    local filelist=( ${PRODUCT_COPY_FILES_LIST[@]} ${PRODUCT_PACKAGES_LIST[@]} )
     local count=${#filelist[@]}
 
     for ((i=0; i < count; i++)); do
-        local package="proprietary/${filelist[$i]}"
+        local split=(${filelist[$i]//:/ })
+        local package_name="${split[0]#-}"
+        local package="proprietary/$(basename $package_name)"
 
         download_package "$repo" "$package"
         verify_package "$package"

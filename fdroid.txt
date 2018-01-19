@@ -1,4 +1,4 @@
--app/org.fdroid.fdroid_1001000.apk
--app/org.microg.nlp.backend.ichnaea_20026.apk
--app/org.microg.nlp.backend.nominatim_20042.apk
--priv-app/org.fdroid.fdroid.privileged_2070.apk
+-app/org.fdroid.fdroid_1001000.apk:PRESIGNED
+-app/org.microg.nlp.backend.ichnaea_20026.apk:PRESIGNED
+-app/org.microg.nlp.backend.nominatim_20042.apk:PRESIGNED
+-priv-app/org.fdroid.fdroid.privileged_2070.apk:PRESIGNED
