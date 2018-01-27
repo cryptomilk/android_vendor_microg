@@ -1,4 +1,4 @@
--app/com.google.android.gsf-8.apk:PRESIGNED
--app/org.microg.gms.droidguard-14.apk:PRESIGNED
--priv-app/com.google.android.gms-11951417.apk:PRESIGNED
--priv-app/com.android.vending-16.apk:PRESIGNED
+-app/com.google.android.gsf-8.apk;PRESIGNED
+-app/org.microg.gms.droidguard-14.apk;PRESIGNED
+-priv-app/com.google.android.gms-11951417.apk;PRESIGNED
+-priv-app/com.android.vending-16.apk;PRESIGNED

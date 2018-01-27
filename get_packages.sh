@@ -99,7 +99,7 @@ function get_packages() {
     local count=${#filelist[@]}
 
     for ((i=0; i < count; i++)); do
-        local split=(${filelist[$i]//:/ })
+        local split=(${filelist[$i]//;/ })
         local package_name="${split[0]#-}"
         local package="proprietary/$(basename $package_name)"
 
