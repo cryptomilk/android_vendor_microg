@@ -19,3 +19,7 @@ Getting the packages
 
       cd vendor/microg
       ./get_packages.sh
+
+* Add it to your device.mk
+
+      $(call inherit-product, vendor/microg/microg-vendor.mk)
