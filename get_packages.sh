@@ -110,8 +110,8 @@ function get_packages() {
     return 0
 }
 
-get_packages "$FDROID_REPO_URL" "fdroid.txt"
-get_packages "$MICROG_REPO_URL" "microg.txt"
+get_packages "$FDROID_REPO_URL" "$MY_DIR/repo/fdroid.txt"
+get_packages "$MICROG_REPO_URL" "$MY_DIR/repo/microg.txt"
 
 INITIAL_COPYRIGHT_YEAR=2017
 VENDOR="microg"
@@ -121,8 +121,8 @@ PRODUCTMK="$MY_DIR/$VENDOR-vendor.mk"
 DEVICE="true"
 write_headers "" WITH_MICROG
 DEVICE=
-write_makefiles "$MY_DIR/fdroid.txt"
-write_makefiles "$MY_DIR/microg.txt"
+write_makefiles "$MY_DIR/repo/fdroid.txt"
+write_makefiles "$MY_DIR/repo/microg.txt"
 write_footers
 
 exit 0
