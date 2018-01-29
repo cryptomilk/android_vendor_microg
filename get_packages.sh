@@ -101,7 +101,7 @@ function get_packages() {
     for ((i=0; i < count; i++)); do
         local split=(${filelist[$i]//;/ })
         local package_name="${split[0]#-}"
-        local package="proprietary/$(basename $package_name)"
+        local package="proprietary/$package_name"
 
         download_package "$repo" "$package"
         verify_package "$package"
