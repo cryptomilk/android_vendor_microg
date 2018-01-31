@@ -93,18 +93,23 @@ function get_packages() {
         mkdir "proprietary"
     fi
 
-    parse_file_list $package_file_list
+    for line in $(grep -v '^#' $package_file_list); do
+        if [ -z "$line" ]; then
+            continue;
+        fi
 
-    local filelist=( ${PRODUCT_COPY_FILES_LIST[@]} ${PRODUCT_PACKAGES_LIST[@]} )
-    local count=${#filelist[@]}
-
-    for ((i=0; i < count; i++)); do
-        local split=(${filelist[$i]//;/ })
+        local split=(${line//:/ })
         local package_name="${split[0]#-}"
         local package="proprietary/$package_name"
 
         download_package "$repo" "$package"
         verify_package "$package"
+
+        local target_split="${split[1]#-}"
+        target_pkg="proprietary/$(target_file $target_split | sed 's/\;.*//')"
+        echo "- Target package: $target_pkg"
+        cp $package $target_pkg
+        echo
     done
 
     return 0
